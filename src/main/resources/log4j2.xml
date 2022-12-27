@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </Console>
+        <File name="fout" fileName="baeldung.log" append="true">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%nw</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="stdout"/>
+        </Root>
+        <Root level="INFO">
+            <AppenderRef ref="stdout" />
+            <AppenderRef ref="fout"/>
+        </Root>
+        <AsyncRoot level="DEBUG">
+            <AppenderRef ref="stdout" />
+            <AppenderRef ref="fout"/>
+        </AsyncRoot>
+        <Logger name="com.baeldung.log4j2" level="debug">
+            <AppenderRef ref="stdout"/>
+        </Logger>
+        <Root level="TRACE">
+            <AppenderRef ref="stdout" />
+            <AppenderRef ref="fout"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
