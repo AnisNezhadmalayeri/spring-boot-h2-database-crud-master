@@ -1,4 +1,6 @@
 # Spring Boot H2 Database CRUD example: Building Rest API with Spring Data JPA
+[![js-canonical-style](https://img.shields.io/badge/code%20style-canonical-blue.svg?style=flat-square)](https://github.com/gajus/canonical)
+
 
 For more detail, please visit:
 > [Spring Boot JPA + H2 example: Build a CRUD Rest APIs](https://www.bezkoder.com/spring-boot-jpa-h2-example/)
