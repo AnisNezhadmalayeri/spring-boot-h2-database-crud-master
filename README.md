@@ -1,11 +1,41 @@
 # Spring Boot H2 Database CRUD example: Building Rest API with Spring Data JPA
 
-[![Travis build status](http://img.shields.io/travis/gajus/canonical/master.svg?style=flat-square)](https://travis-ci.org/gajus/canonical)
+[![Travis build status](http://img.shields.io/travis/gajus/prettyprint/master.svg?style=flat-square)](https://travis-ci.org/gajus/prettyprint)
 [![NPM version](http://img.shields.io/npm/v/canonical.svg?style=flat-square)](https://www.npmjs.com/package/canonical)
 [![js-canonical-style](https://img.shields.io/badge/code%20style-canonical-blue.svg?style=flat-square)](https://github.com/gajus/canonical)
 
 
-For more detail, please visit:
+
+
+## Install
+```
+mvn spring-boot:run
+```
+
+## API
+
+```js
+/**
+ * @typedef {Object} optionsType
+ * @property {string} indentTemplate String used to indent one level of code (default: '    ').
+ * @property {valueIndex|null} valueIndex A function used to index values in the object, the line of declaration in the output and the internal type of the value.
+ */
+
+/**
+ * @param {Object} subject
+ * @param {optionsType} options
+ * @returns {string}
+ */
+prettyprint;
+```
+
+## Use
+
+```js
+import prettyprint from 'prettyprint';
+```
+
+## For more detail, please visit:
 > [Spring Boot JPA + H2 example: Build a CRUD Rest APIs](https://www.bezkoder.com/spring-boot-jpa-h2-example/)
 
 In this tutorial, we're gonna build a Spring Boot Rest CRUD API example with Maven that use Spring Data JPA to interact with H2 database. You'll know:
@@ -88,8 +118,4 @@ Run both Back-end & Front-end in one place:
 
 > [Integrate Vue.js with Spring Boot Rest API](https://www.bezkoder.com/integrate-vue-spring-boot/)
 
-## Run Spring Boot application
-```
-mvn spring-boot:run
-```
 
