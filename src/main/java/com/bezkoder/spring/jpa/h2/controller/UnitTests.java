@@ -1,19 +1,35 @@
 package com.bezkoder.spring.jpa.h2.controller;
 
-import org.junit.jupiter.api.*;
-
 import java.awt.*;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static jdk.internal.org.jline.keymap.KeyMap.translate;
+import static org.aspectj.apache.bcel.classfile.Signature.translate;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.*;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Rule;
+import org.junit.jupiter.api.*;
+import org.junit.platform.suite.api.ExcludePackages;
+import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.SelectPackages;
+import org.junit.rules.ExpectedException;
 import org.junit.runners.Suite;
 
+import com.baeldung.junit5.bean.NumbersBean;
+
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class UnitTests {
+    private static Logger log = LogManager.getLogger(Log4j2.class);
+    private NumbersBean bean = new NumbersBean();
     public boolean isNumberEven(Integer number) {
         return number % 2 == 0;
     }
@@ -134,6 +150,8 @@ public class UnitTests {
     public class AllUnitTest {}
 
     //Dynamic Tests
+     private List<String> in = new ArrayList<>(Arrays.asList());
+    private List<String> out = new ArrayList<>(Arrays.asList());
     @TestFactory
     Stream<DynamicTest> translateDynamicTestsFromStream() {
         return in.stream()
